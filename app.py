@@ -33,7 +33,7 @@ col1, col2, col3 = st.columns([1,1,0.25])
 with col1:
     st.write(f" Nome da empresa: {empresa.info['longName']}")
 with col2:
-    st.write(f" Nome da empresa: {empresa.info['industryDisp']}")
+    st.write(f" Setor: {empresa.info['industryDisp']}")
 with col3:
     st.write(f"Cotação Atual: {empresa.info['currentPrice']} BRL")
 

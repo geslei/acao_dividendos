@@ -29,12 +29,10 @@ end_date = data_fim.strftime("%Y-%m-%d")
 empresa = yf.Ticker(f"{ticker}.SA")
 tickerDF = empresa.history(period='1d', start=start_date, end=end_date)
 
-col1, col2, col3 = st.columns([1,1,0.25])
+col1, col2 = st.columns([1,1])
 with col1:
     st.write(f" Nome da empresa: {empresa.info['longName']}")
 with col2:
-    st.write(f" Setor: {empresa.info['industryDisp']}")
-with col3:
     st.write(f"Cotação Atual: {empresa.info['currentPrice']} BRL")
 
 

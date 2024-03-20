@@ -3,6 +3,8 @@ import yfinance as yf
 import streamlit as st
 import datetime
 import pandas as pd
+import quantstats as qs
+qs.extend_pandas()
 
 st.set_page_config(
     page_title='DASHBOARD FINANCEIRO - AÇÕES',
@@ -35,7 +37,7 @@ with col1:
 with col2:
     st.write(f"Cotação Atual: {empresa.info['currentPrice']} BRL")
 
-
+qs.stats.sharpe(empresa)
 st.line_chart(tickerDF.Close)
 st.bar_chart(tickerDF.Dividends)
 
